@@ -1,0 +1,397 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <!-- Configuración básica y fuentes -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Perfil Personal — Jhonn</title>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700;900&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet">
+  <!-- Hoja de estilos externa: colores, layout y componentes -->
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <!-- Canvas de partículas interactivas (reaccionan al cursor) -->
+  <canvas id="particles-canvas" class="particles-bg" aria-hidden="true"></canvas>
+<main>
+<!-- ========== NAVEGACIÓN ========== -->
+<nav role="navigation" aria-label="Menú principal">
+  <div class="nav-logo">J. Profile</div>
+  <div class="nav-right">
+    <button type="button" class="theme-toggle" aria-label="Cambiar a modo claro" title="Cambiar a modo claro">
+      <span class="theme-icon theme-icon--sun" aria-hidden="true">☀</span>
+      <span class="theme-icon theme-icon--moon" aria-hidden="true">🌙</span>
+    </button>
+    <button type="button" class="nav-toggle" aria-label="Abrir menú" aria-expanded="false" aria-controls="nav-menu">
+      <span></span><span></span><span></span>
+    </button>
+    <ul class="nav-links" id="nav-menu">
+    <li><a href="#hero">Inicio</a></li>
+    <li><a href="#datos">Datos</a></li>
+    <li><a href="#sobre-mi">Sobre Mí</a></li>
+    <li><a href="#formacion">Formación</a></li>
+    <li><a href="#destrezas">Destrezas</a></li>
+    <li><a href="#pasatiempos">Pasatiempos</a></li>
+    <li><a href="#especializacion">Especialización</a></li>
+    <li><a href="#trabajo">Trabajo</a></li>
+    <li><a href="#motivacion">Motivación</a></li>
+    <li><a href="#contacto">Contacto</a></li>
+  </ul>
+  </div>
+</nav>
+
+<!-- ========== HERO: portada con nombre, subtítulo y foto de perfil ========== -->
+<section id="hero">
+  <div class="hero-text">
+    <div class="hero-eyebrow reveal" data-reveal-delay="0">Perfil Profesional</div>
+    <h1 class="hero-name reveal" data-reveal-delay="80">Jhonn<br><span>Marca</span></h1>
+    <p class="hero-subtitle reveal" data-reveal-delay="160">Estudiante apasionado y profesional en desarrollo, comprometido con el aprendizaje continuo y el crecimiento personal y académico.</p>
+    <a href="#datos" class="cta-btn reveal" data-reveal-delay="240">Ver Perfil Completo →</a>
+  </div>
+  <div class="hero-image-wrap reveal" data-reveal-delay="320">
+    <div class="hero-img-frame">
+      <!-- Foto de perfil: si falla la carga, onerror muestra el bloque img-fallback -->
+      <img src="img/Jhonn.jpeg" alt="Foto de perfil de Jhonn Marca" loading="lazy"
+        onerror="this.style.display='none'; this.nextElementSibling.style.display='flex'">
+      <div class="img-fallback" style="display:none" aria-hidden="true">
+        <svg width="64" height="64" viewBox="0 0 64 64" fill="none">
+        <circle cx="32" cy="24" r="14" stroke="currentColor" stroke-width="2"/>
+        <path d="M6 58c0-14.4 11.6-26 26-26s26 11.6 26 26" stroke="currentColor" stroke-width="2"/>
+        </svg>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DATOS PERSONALES: nombre, apellido, edad, correo, teléfono, etc. ========== -->
+<section id="datos">
+  <div class="reveal">
+    <div class="section-label">01 — Identificación</div>
+    <h2 class="section-title">Datos Personales</h2>
+  </div>
+  <!-- Grid de datos: cada .dato-item muestra una etiqueta y su valor -->
+  <div class="grid-datos reveal">
+    <div class="dato-item">
+      <div class="dato-label">Nombre</div>
+      <div class="dato-value">Jhonn</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Apellidos</div>
+      <div class="dato-value">Marca Tijera</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Edad</div>
+      <div class="dato-value">19 años</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Sexo</div>
+      <div class="dato-value">Masculino</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Correo Electrónico</div>
+      <div class="dato-value">jhonnmc02@gmail.com</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Número de Teléfono</div>
+      <div class="dato-value">+591 75768536</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Grado de Formación</div>
+      <div class="dato-value">Técnico Superior en Sistemas Informáticos</div>
+    </div>
+    <div class="dato-item">
+      <div class="dato-label">Número de Referencia</div>
+      <div class="dato-value">+591 63806104</div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== SOBRE MÍ: descripción personal y tarjetas de resumen ========== -->
+<section id="sobre-mi">
+  <div class="reveal">
+    <div class="section-label">02 — Perfil</div>
+    <h2 class="section-title">Sobre Mí</h2>
+  </div>
+  <div class="about-grid">
+    <div class="about-text reveal">
+      <p>Soy una persona <strong>proactiva, comprometida y orientada al aprendizaje</strong>, con gran interés en el desarrollo de habilidades tanto técnicas como interpersonales. Me considero alguien que asume los retos con responsabilidad y entusiasmo.</p>
+      <p>Valoro profundamente el trabajo en equipo, la comunicación clara y el crecimiento continuo. Cada experiencia académica y laboral ha sido una oportunidad para forjarme como el profesional que aspiro a ser.</p>
+      <p>Mi formación me ha dotado de herramientas analíticas y creativas para <strong>resolver problemas con enfoque estratégico</strong>, siempre buscando la excelencia en cada proyecto que emprendo.</p>
+    </div>
+    <div class="stats-col reveal">
+      <div class="stat-card">
+        <div class="stat-icon">🎓</div>
+        <div>
+          <div class="stat-info-label">Nivel Académico</div>
+          <div class="stat-info-val">Técnico Superior en Sistemas Informáticos</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">🌎</div>
+        <div>
+          <div class="stat-info-label">Ubicación</div>
+          <div class="stat-info-val">Sucre, Bolivia</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">💼</div>
+        <div>
+          <div class="stat-info-label">Experiencia</div>
+          <div class="stat-info-val">Prácticas laborales en el Instituto Psicopedagógico Ciudad Joven San Juan de Dios</div>
+        </div>
+      </div>
+      <div class="stat-card">
+        <div class="stat-icon">📚</div>
+        <div>
+          <div class="stat-info-label">Carrera</div>
+          <div class="stat-info-val">Ingeniería en Sistemas</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== FORMACIÓN E IDIOMAS: estudios y barras de nivel de idiomas ========== -->
+<section id="formacion">
+  <div class="reveal">
+    <div class="section-label">03 — Formación</div>
+    <h2 class="section-title">Formación & Idiomas</h2>
+  </div>
+  <div class="two-col">
+    <div class="reveal">
+      <h3 class="subsection-title">Grado de Formación</h3>
+      <div class="card">
+        <div class="card-title">Educación Superior</div>
+        <div class="card-main">Instituto Técnico Superior de Educación Comercial ITSEC-SUCRE</div>
+        <div class="card-sub">Sistemas informáticos · 2024 – 2025</div>
+        <hr class="card-divider">
+        <div class="card-title">Educación Superior</div>
+        <div class="card-main">Universidad Mayor Real y Pontificia de San Francisco Xavier de Chuquisaca</div>
+        <div class="card-sub">Ingeniería en Sistemas · Ingreso 2026 (en curso)</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Bachillerato</div>
+        <div class="card-main">Colegio Nacional Jaime de Zudañez</div>
+        <div class="card-sub">Modalidad · 2018 – 2023</div>
+      </div>
+      <div class="card">
+        <div class="card-title">Cursos & Certificaciones</div>
+        <div class="card-main">Programación Básica</div>
+        <div class="card-sub">SoloLearn · 2023</div>
+        <hr class="card-divider">
+        <div class="card-main">HTML & CSS - Curso Básico</div>
+        <div class="card-sub">SoloLearn · 2023</div>
+        <hr class="card-divider">
+        <div class="card-main">JavaScript - Curso Básico</div>
+        <div class="card-sub">SoloLearn · 2024</div>
+        <hr class="card-divider">
+        <div class="card-main">Python - Curso Básico</div>
+        <div class="card-sub">SoloLearn · 2024</div>
+      </div>
+    </div>
+    <div class="reveal">
+      <h3 class="subsection-title">Nivel de Idiomas</h3>
+      <!-- Barras de idioma: script.js anima el ancho según data-width -->
+      <div class="card card--lang">
+        <div class="lang-item">
+          <div class="lang-header">
+            <span>Español</span><span class="lang-pct">Nativo</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" data-width="99"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span>Inglés</span><span class="lang-pct">Básico (A2)</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" data-width="40"></div></div>
+        </div>
+        <div class="lang-item">
+          <div class="lang-header">
+            <span>Portugués</span><span class="lang-pct">Básico (A1)</span>
+          </div>
+          <div class="lang-bar-bg"><div class="lang-bar-fill" data-width="5"></div></div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== DESTREZAS: habilidades y destrezas que necesito desarrollar ========== -->
+<section id="destrezas">
+  <div class="reveal">
+    <div class="section-label">04 — Habilidades</div>
+    <h2 class="section-title">Destrezas</h2>
+  </div>
+  <div class="reveal">
+    <p class="section-intro">Habilidades y competencias que he desarrollado a lo largo de mi formación y experiencia.</p>
+    <div class="skills-grid">
+      <span class="skill-tag">Comunicación</span>
+      <span class="skill-tag">Trabajo en Equipo</span>
+      <span class="skill-tag">Pensamiento Crítico</span>
+      <span class="skill-tag">Resolución de Problemas</span>
+      <span class="skill-tag">Liderazgo</span>
+      <span class="skill-tag">Gestión del Tiempo</span>
+      <span class="skill-tag">Adaptabilidad</span>
+      <span class="skill-tag">Análisis de Datos</span>
+      <span class="skill-tag">Ofimática</span>
+      <span class="skill-tag">Investigación</span>
+      <span class="skill-tag">Creatividad</span>
+      <span class="skill-tag">Empatía</span>
+    </div>
+  </div>
+
+  <div class="reveal needs-section">
+    <div class="section-label needs-label">Desde mi perspectiva — destrezas que necesito desarrollar</div>
+    <div class="needs-grid">
+      <div class="need-card">
+        <div class="need-num">01</div>
+        <div class="need-title">Manejo Avanzado de Tecnología</div>
+        <div class="need-desc">Profundizar en herramientas digitales y software especializado del área.</div>
+      </div>
+      <div class="need-card">
+        <div class="need-num">02</div>
+        <div class="need-title">Inglés Profesional</div>
+        <div class="need-desc">Alcanzar un nivel avanzado para ampliar las oportunidades laborales.</div>
+      </div>
+      <div class="need-card">
+        <div class="need-num">03</div>
+        <div class="need-title">Networking & Marca Personal</div>
+        <div class="need-desc">Construir conexiones estratégicas y proyectar una identidad profesional sólida.</div>
+      </div>
+      <div class="need-card">
+        <div class="need-num">04</div>
+        <div class="need-title">Inteligencia Emocional</div>
+        <div class="need-desc">Gestionar mejor las emociones propias y ajenas en entornos de presión.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== PASATIEMPOS ========== -->
+<section id="pasatiempos">
+  <div class="reveal">
+    <div class="section-label">05 — Vida personal</div>
+    <h2 class="section-title">Pasatiempos</h2>
+  </div>
+  <div class="reveal">
+    <p class="section-intro">Actividades que disfruto fuera del ámbito académico y laboral.</p>
+    <div class="pasatiempos-content">
+      <p>Me gusta <strong>dibujar</strong> y crear <strong>animaciones en pixel art 2D</strong> con el programa <strong>Aseprite</strong>. Entreno en el <strong>gimnasio</strong> con regularidad y practico <strong>fútbol</strong>, <strong>vóley</strong> y <strong>básquetbol</strong>. En el mundo de los videojuegos soy jugador amateur de <strong>Tekken Tag 2</strong> y <strong>Tekken 8</strong>; en este último participé en un torneo y quedé en el <strong>top 25</strong>.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== ESPECIALIZACIÓN ========== -->
+<section id="especializacion">
+  <div class="reveal">
+    <div class="section-label">06 — Objetivo profesional</div>
+    <h2 class="section-title">En qué me quiero especializar</h2>
+  </div>
+  <div class="reveal">
+    <p class="section-intro">Áreas en las que aspiro a profundizar y crecer como profesional.</p>
+    <div class="especializacion-content">
+      <p>Me gustaría especializarme como <strong>desarrollador fullstack</strong>, programando páginas web de principio a fin. Además, ya realizo <strong>juegos básicos</strong> en motores como <strong>Godot</strong> y <strong>Unity</strong>, y quiero <strong>pulir mi lógica de programación</strong> para llevar mis proyectos a un nivel más avanzado.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== TRABAJO: línea de tiempo con experiencia laboral ========== -->
+<section id="trabajo">
+  <div class="reveal">
+    <div class="section-label">07 — Experiencia</div>
+    <h2 class="section-title">Trayectoria Laboral</h2>
+  </div>
+  <div class="timeline-wrap reveal">
+    <div class="timeline">
+      <div class="tl-item">
+        <div class="tl-period">2026 — Actualidad</div>
+        <div class="tl-role">Desarrollo de sitios web</div>
+        <div class="tl-company">Proyectos personales / freelance</div>
+        <div class="tl-desc">Desarrollo de sitios web de forma independiente, aplicando y ampliando los conocimientos en programación y diseño. Actualmente no tengo empleo formal; me enfoco en construir mi portafolio y mejorar mis habilidades técnicas.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Enero 2026</div>
+        <div class="tl-role">Trabajo en demolición</div>
+        <div class="tl-company">Construcción / obra</div>
+        <div class="tl-desc">Experiencia reciente en labores de demolición, reforzando disciplina y trabajo en entornos exigentes.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">2024 — 2025</div>
+        <div class="tl-role">Prácticas laborales en Sistemas</div>
+        <div class="tl-company">Instituto Psicopedagógico Ciudad Joven San Juan de Dios</div>
+        <div class="tl-desc">Prácticas profesionales vinculadas al Técnico Superior en Sistemas Informáticos. Aplicación de conocimientos en soporte y sistemas dentro del instituto.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Febrero — Mayo 2024</div>
+        <div class="tl-role">Entrenador personal</div>
+        <div class="tl-company">Actividad independiente</div>
+        <div class="tl-desc">Durante unos meses me desempeñé como entrenador personal, desarrollando comunicación, planificación y acompañamiento a personas en sus objetivos de entrenamiento.</div>
+      </div>
+      <div class="tl-item">
+        <div class="tl-period">Vacaciones Dic — Ene · 8 años</div>
+        <div class="tl-role">Trabajo en construcción</div>
+        <div class="tl-company">Temporada vacacional</div>
+        <div class="tl-desc">Participación en labores de construcción durante las vacaciones de diciembre y enero a lo largo de ocho años. Experiencia en trabajo físico, cumplimiento de plazos y trabajo en equipo.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ========== MOTIVACIÓN: por qué elegí la carrera y reflexión ========== -->
+<section id="motivacion">
+  <div class="reveal">
+    <div class="section-label">08 — Motivación</div>
+    <h2 class="section-title">Por Qué Elegí Mi Carrera</h2>
+  </div>
+  <div class="motive-layout">
+    <div class="motive-quote reveal">
+      No elegí esta área por convicción desde el inicio: llegué a Sistemas Informáticos en el colegio casi por obligación, pero con el tiempo se convirtió en mi propio camino y en el proyecto al que quiero dedicar mi vida.
+    </div>
+    <div class="motive-body reveal">
+      <p>Al principio veía la materia de Sistemas Informáticos como algo que simplemente tenía que cursar, pero con el paso del tiempo empecé a interesarme cada vez más. En un parpadeo habían pasado dos años y ya sentía curiosidad por descubrir qué más había en el camino de las ciencias tecnológicas y la programación.</p>
+      <p>Mi primera decisión fue terminar la carrera de Técnico Superior en Sistemas Informáticos para poner a prueba si realmente quería dedicarme a este ámbito o si sería solo un pasatiempo. Mientras avanzaba en los módulos, fortalecía mis bases en programación, software y hardware, y cada proyecto despertaba más mi interés. Cuando concluí los cursos y realicé mi defensa de grado, tuve claro que esto era a lo que quería dedicarme profesionalmente.</p>
+      <p>Ahora, con esos cimientos, mi motivación es seguir ampliando mis conocimientos y ser parte de la evolución de la tecnología. Ya dimos el primer gran paso con las computadoras y hoy vivimos la era de las inteligencias artificiales; me emociona aprender, aportar y ser parte de lo que viene después.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ========== CONTACTO: correo, teléfono y número de referencia ========== -->
+<section id="contacto">
+  <div class="reveal">
+    <div class="section-label">09 — Contacto</div>
+    <h2 class="section-title">¿Hablamos?</h2>
+    <p>Estoy disponible para oportunidades laborales, colaboraciones o simplemente conectar.</p>
+  </div>
+  <div class="contact-cards reveal">
+    <a href="mailto:jhonnmc02@gmail.com" class="contact-card">
+      <span class="icon" aria-hidden="true">✉️</span>
+      <div>
+        <span class="info-label">Correo</span>
+        <span class="info-val">jhonnmc02@gmail.com</span>
+      </div>
+    </a>
+    <a href="tel:+59175768536" class="contact-card">
+      <span class="icon" aria-hidden="true">📱</span>
+      <div>
+        <span class="info-label">Teléfono</span>
+        <span class="info-val">+591 75768536</span>
+      </div>
+    </a>
+    <a href="tel:+59163806104" class="contact-card">
+      <span class="icon" aria-hidden="true">🔖</span>
+      <div>
+        <span class="info-label">Referencia</span>
+        <span class="info-val">+591 63806104</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p>© 2026 · Jhonn Marca — Todos los derechos reservados</p>
+</footer>
+
+<script src="script.js"></script>
+</body>
+</html>
